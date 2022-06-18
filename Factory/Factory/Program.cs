@@ -1,6 +1,8 @@
-﻿using Factory.Factory;
+﻿using System;
+using System.Reflection;
+using Factory.Factory;
 using Factory.Factory.Interfaces;
-using System;
+
 
 namespace Factory
 {
@@ -13,6 +15,11 @@ namespace Factory
 
             Console.WriteLine(_instanceTwitter.GetLastName());
             Console.WriteLine(_instanceFacebook.GetLastName());
+
+            var assemblyDataCodeBase = Assembly.GetEntryAssembly();
+            var appDomainData = AppDomain.CurrentDomain.GetAssemblies();
+
+
             Console.ReadKey();
         }
     }
